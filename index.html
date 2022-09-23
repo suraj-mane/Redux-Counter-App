@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Redux-counter-app</title>
+        <link rel="stylesheet" href="index.css">
+        <script src="https://cdn.tailwindcss.com"></script>
+        <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/redux/4.2.0/redux.min.js" integrity="sha512-1/8Tj23BRrWnKZXeBruk6wTnsMJbi/lJsk9bsRgVwb6j5q39n0A00gFjbCTaDo5l5XrPVv4DZXftrJExhRF/Ug==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/redux/4.2.0/redux.js" integrity="sha512-8clKd0Zb9EeWqWE0gzlNxwWIjzYlYZ9cAsGcGM7gPsE+SKUxY6zZmLhrWqHMYQqbNCSwy21bn/TtA4zTQ+edag==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    </head>
+<body>
+    <h1 class="text-center mt-20 text-8xl" id="counterDisplay">0</h1>
+    <div class="flex w-1/2 mx-auto mt-20">
+        <div class="w-1/2 text-center">
+            <h2 class="font-semibold text-base">Steps</h2>
+            <button class="bg-blue-600 rounded px-10 py-3 mt-4 text-gray-50 font-semibold" id="stepFive">5</button>
+            <button class="bg-blue-600 rounded px-10 py-3 mt-4 text-gray-50 font-semibold" id="stepTen">10</button>
+            <button class="bg-blue-600 rounded px-10 py-3 mt-4 text-gray-50 font-semibold" id="stepFifteen">15</button>
+        </div>
+        <div class="w-1/2 text-center text-base">
+            <h2 class="font-semibold">Max Value</h2>
+            <button class="bg-blue-600 rounded px-10 py-3 mt-4 text-gray-50 font-semibold" id="maxFifteen">15</button>
+            <button class="bg-blue-600 rounded px-10 py-3 mt-4 text-gray-50 font-semibold" id="maxHundred">100</button>
+            <button class="bg-blue-600 rounded px-10 py-3 mt-4 text-gray-50 font-semibold" id="maxTwoHundred">200</button>
+        </div>
+    </div>
+    <div class="text-center mt-10">
+        <button id="increment" class="bg-green-500 rounded px-10 py-4 mt-10 text-gray-50 font-semibold">Increment</button>
+        <button id="decrement" class="bg-green-500 rounded px-10 py-4 mt-10 text-gray-50 font-semibold ml-4">Decrement</button>
+        <button id="reset" class="bg-green-500 rounded px-10 py-4 mt-10 text-gray-50 font-semibold ml-4">Reset</button>
+    </div>
+</body>
+<script src="index.js"></script>
+</html>
