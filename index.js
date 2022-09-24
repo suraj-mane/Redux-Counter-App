@@ -1,7 +1,3 @@
-let store = Redux.createStore(reducer);
-let counter = 0;
-let step = 0;
-let maxValue = 0;
 
 let counterDisplay = document.getElementById("counterDisplay");
 let increment = document.getElementById("increment");
@@ -14,30 +10,39 @@ let maxFiteen = document.getElementById('maxFifteen');
 let maxHundred = document.getElementById('maxHundred');
 let maxTwoHundred = document.getElementById('maxTwoHundred');
 
-function reducer(counter = {value: 0},action){
-    
-    var step = { value: 1 };
+const instialState = {
+    value:0,
+    step:1,
+}
+
+function reducer( state=instialState,action ){
     
     switch(action.type) {
         case "stepFive":
-            return { value: step.value = 5 };
+            state.step = 5;
+            return state;
         case "stepTen":
-            return { value: step.value = 10 };
+            state.step = 10;
+            return state;
         case "stepFifteen":
-            return { value: step.value = 15 };
+            state.step = 15;
+            return state;
         case "increment":
-            return { value: counter.value + (step || 1) };
+            state.value = state.value + state.step;
+            return state;
         case "decrement":
-            return { value: counter.value - (step || 1) };
+            state.value = state.value - state.step;
+            return state;
         case "reset":
-            return { value:0 }; 
+            state.value = 0;
+            return state; 
         default:
-            return { value: 0, step }
-    }
-
-    
+            return state;
+        }      
 }
 
+let store = Redux.createStore(reducer);
+console.log(store.getState());
 
 maxFiteen.addEventListener('click', () => {
     counter = 15;
@@ -69,14 +74,17 @@ stepFifteen.addEventListener('click', () => {
 increment.addEventListener('click', () => {
     store.dispatch({ type: 'increment'});
     counterDisplay.innerText = store.getState().value;
+    console.log(store.getState());
 })
 
 decrement.addEventListener('click', () => {
     store.dispatch({ type: 'decrement'});
     counterDisplay.innerText = store.getState().value;
+    console.log(store.getState());
 })
 
 reset.addEventListener('click', () => {
     store.dispatch({ type: 'reset'});
     counterDisplay.innerText = store.getState().value;
+    console.log(store.getState());
 })
